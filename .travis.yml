@@ -1,0 +1,26 @@
+lenguage: node_js
+cache:
+  directories:
+    - node_modules
+    - ~/.npm
+node_js:
+  - "12"
+git:
+  depth: 3
+script:
+  - yarn test
+notifications:
+  slack: ejemplo-sru5737:5tir0dqSUQL4TTPLAePBa58a
+  email:
+    recipients:
+      - mmunozpozos@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provider: heroku
+  skip-cleanup: true
+  keep-history: true
+  api_key: e305e163-325f-41c5-ad90-29d23f5b03bc
+  app: platzi-store-backend-01
+  on:
+    repo: MiguelAngelMP/platzi-store-backend
